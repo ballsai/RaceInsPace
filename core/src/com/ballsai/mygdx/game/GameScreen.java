@@ -8,15 +8,15 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class GameScreen extends ScreenAdapter{
-	private RaceInSpaceGame pacmanGame;
-	private Texture pacmanImg;
+	private RaceInSpaceGame raceinspaceGame;
+	private Texture carImg;
 	private int x;
 	private int y;
 	
 	 
-    public GameScreen(RaceInSpaceGame pacmanGame) {
-        this.pacmanGame = pacmanGame;
-        pacmanImg = new Texture("pacman.png");
+    public GameScreen(RaceInSpaceGame raceinspaceGame) {
+        this.raceinspaceGame = raceinspaceGame;
+        carImg = new Texture("car.png");
         x = 100;
         y = 100;
     }
@@ -25,14 +25,15 @@ public class GameScreen extends ScreenAdapter{
     	 update(delta);
     	Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-    	 SpriteBatch batch = pacmanGame.batch;
+    	 SpriteBatch batch = raceinspaceGame.batch;
          batch.begin();
-         batch.draw(pacmanImg, x, y);
+         batch.draw(carImg, x, y);
          batch.end();
     }
     private void update(float delta) {
     	if(Gdx.input.isKeyPressed(Keys.LEFT)) {
             x -= 10;
+            y=100;
         }
         if(Gdx.input.isKeyPressed(Keys.RIGHT)) {
             x += 10;
