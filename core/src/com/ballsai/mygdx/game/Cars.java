@@ -4,7 +4,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Cars {
 	 Vector2 position;
-	 public static final int SPEED = 2;
+	 public static final int SPEED = 8;
 	 public static final int DIRECTION_UP = 1;
 	 public static final int DIRECTION_DOWN = 3;
 	 public static final int DIRECTION_STILL = 0;

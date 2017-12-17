@@ -26,13 +26,14 @@ public class WorldRenderer {
 	private Texture roadImg;
     World world;
     GameScreen Game;
-   
+    private BitmapFont font;
     
 	public WorldRenderer(RaceInSpaceGame raceinspaceGame, World world) {
      this.raceinspaceGame = raceinspaceGame;
 	 this.world = world;
 	 carImg = new Texture("car.png");
 	 roadImg = new Texture("road.png");
+	 font = new BitmapFont();
 	
   }
 	 
@@ -44,8 +45,9 @@ public class WorldRenderer {
         Vector2 player_pos = world.getPlayer().getPosition();
         Vector2 pos = world.getCar().getPosition();
         Vector2 posLeft = world.getCarLeft().getPosition();
+        Vector2 posRight = world.getCarRight().getPosition();
         batch.draw(roadImg,0,0,600,300);
-       
+        
         /*if((pos.y<=300 && pos.y >-100)) {
         	
         	if(n== 1) {
@@ -87,12 +89,12 @@ public class WorldRenderer {
 	    	      (float) (CAR_X-RATIO*((pos.y-CAR_Y)/F)),(float) (CAR_Y-(pos.y-CAR_Y)/F));
         batch.draw(carImg,(float) (0.8*posLeft.y+60) , posLeft.y,
 	    	      (float) (CAR_X-RATIO*((posLeft.y-CAR_Y)/F)),(float) (CAR_Y-(posLeft.y-CAR_Y)/F));
+        batch.draw(carImg,(float) (-0.38*posRight.y+410) , posRight.y,
+	    	      (float) (CAR_X-RATIO*((posRight.y-CAR_Y)/F)),(float) (CAR_Y-(posRight.y-CAR_Y)/F));
       
         batch.draw(carImg,player_pos.x-CAR_X/2,player_pos.y,CAR_X,CAR_Y);
+        font.draw(batch, "SCORE: " + world.getScore(), 450, 390);
         
-        
-        
-      
         batch.end();
        
 	}

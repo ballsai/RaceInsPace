@@ -51,20 +51,32 @@ public class GameScreen extends ScreenAdapter{
 	    	world.getCar().move(Cars.DIRECTION_DOWN);
 	    else{
 	    	world.getCar().getPosition().y =300;
+	    	world.increaseScore();
 	    	}
 	    if(world.getCarLeft().getPosition().y<=300 && world.getCarLeft().getPosition().y>-100 )
 	    	world.getCarLeft().move(Cars.DIRECTION_DOWN);
 	    else{
 	    	world.getCarLeft().getPosition().y =300;
+	    	world.increaseScore();
+	    	}
+	    if(world.getCarRight().getPosition().y<=300 && world.getCarRight().getPosition().y>-100 )
+	    	world.getCarRight().move(Cars.DIRECTION_DOWN);
+	    else{
+	    	world.getCarRight().getPosition().y =300;
+	    	world.increaseScore();
 	    	}
 	    	
-	    /*if(Math.abs(world.getCar().getPosition().y-world.getPlayer().getPosition().y)<=30 &&  // Collsion
+	    if(Math.abs(world.getCar().getPosition().y-world.getPlayer().getPosition().y)<=30 &&  // Collsion for center
 	    		Math.abs(world.getCar().getPosition().x-world.getPlayer().getPosition().x)<100) {
 	    	    world.getCar().move(Cars.DIRECTION_UP);
-	    	}*/
-	    if(Math.abs(world.getCarLeft().getPosition().y-world.getPlayer().getPosition().y)<=60 &&  // Collsion
-	    		Math.abs(world.getCarLeft().getPosition().x-world.getPlayer().getPosition().x)<100) {
+	    	}
+	    if(Math.abs(world.getCarLeft().getPosition().y-world.getPlayer().getPosition().y)<=30 &&  // Collsion for left
+	    		Math.abs(0.8*world.getCarLeft().getPosition().y+60-world.getPlayer().getPosition().x)<120) {
 	    	    world.getCarLeft().move(Cars.DIRECTION_UP);
+	    	}
+	    if(Math.abs(world.getCarRight().getPosition().y-world.getPlayer().getPosition().y)<=30 &&  // Collsion for right
+	    		Math.abs(-0.38*world.getCarRight().getPosition().y+410-world.getPlayer().getPosition().x)<60) {
+	    	    world.getCarRight().move(Cars.DIRECTION_UP);
 	    	}
     	}
            
