@@ -30,16 +30,28 @@ public class WorldRenderer {
 		
 		SpriteBatch batch = raceinspaceGame.batch;
         batch.begin();
-        Vector2 pos = world.getPlayer().getPosition();
-        Vector2 car_pos = world.getCar().getPosition();
+        Vector2 player_pos = world.getPlayer().getPosition();
+        Vector2 pos = world.getCar().getPosition();
         batch.draw(roadImg,0,0,600,300);
-        batch.draw(carImg,(float) (pos.x-CAR_X/2+(RATIO*(pos.y-CAR_Y)/F)/2), pos.y,
-        		  (float) (CAR_X-RATIO*((pos.y-CAR_Y)/F)),(float) (CAR_Y-(pos.y-CAR_Y)/F));
-        batch.draw(carImg,(float) (0.8*pos.y+60) , pos.y,
-      		  (float) (CAR_X-RATIO*((pos.y-CAR_Y)/F)),(float) (CAR_Y-(pos.y-CAR_Y)/F));
-        batch.draw(carImg,(float) (-0.38*pos.y+410) , pos.y,
-        		  (float) (CAR_X-RATIO*((pos.y-CAR_Y)/F)),(float) (CAR_Y-(pos.y-CAR_Y)/F));
+       
         
+        if(pos.y<=290 && pos.y>0) {
+        	
+        		batch.draw(carImg,(float) (pos.x-CAR_X/2+(RATIO*(pos.y-CAR_Y)/F)/2), pos.y,
+        		  (float) (CAR_X-RATIO*((pos.y-CAR_Y)/F)),(float) (CAR_Y-(pos.y-CAR_Y)/F));
+        		batch.draw(carImg,(float) (0.8*pos.y+60) , pos.y,
+        		  (float) (CAR_X-RATIO*((pos.y-CAR_Y)/F)),(float) (CAR_Y-(pos.y-CAR_Y)/F));
+        	  batch.draw(carImg,(float) (-0.38*pos.y+410) , pos.y,
+        		  (float) (CAR_X-RATIO*((pos.y-CAR_Y)/F)),(float) (CAR_Y-(pos.y-CAR_Y)/F));
+        	   
+        	  
+        	  pos.y -= 500/pos.y;
+        	
+        }
+        else
+        	pos.y = 290;
+        
+        batch.draw(carImg,player_pos.x-CAR_X/2,player_pos.y,CAR_X,CAR_Y);
         batch.end();
 	    }
 }

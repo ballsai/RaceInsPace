@@ -5,7 +5,7 @@ public class World {
 	private Cars car;
     World(RaceInSpaceGame raceinspaceGame) {
         player = new Player(300,68);
-        car = new Cars(300,200);
+        car = new Cars(300,290);
     }
  
     Player getPlayer() {
