@@ -4,16 +4,16 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
+
 public class GameScreen extends ScreenAdapter{
 	World world;
 	WorldRenderer worldRenderer;
-    private boolean GameOver;
-  
+   
+   
 	GameScreen(RaceInSpaceGame raceinspaceGame) {
        world = new World(raceinspaceGame);
        worldRenderer = new WorldRenderer(raceinspaceGame, world);
-       GameOver = false;
+       
      
       }
 	    public void render (float delta) {
@@ -26,7 +26,8 @@ public class GameScreen extends ScreenAdapter{
   
     private void update(float delta) {
 
-    	if(!GameOver) {
+    	if(!world.gameOver()) {
+    	
     	/*if(Gdx.input.isKeyPressed(Keys.UP)) {
             world.getCar().move(Cars.DIRECTION_DOWN);
     	 }*/
@@ -81,6 +82,7 @@ public class GameScreen extends ScreenAdapter{
     	}
            
     }
+    
     
     	
        

@@ -1,8 +1,5 @@
 package com.ballsai.mygdx.game;
 
-
-import java.util.ArrayList;
-
 import com.badlogic.gdx.Game;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

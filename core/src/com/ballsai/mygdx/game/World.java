@@ -8,6 +8,8 @@ public class World {
 	private Player player;
 	private Cars car,carLeft,carRight;
 	private int score;
+	private int energy;
+	private boolean gameOver;
 	
     World(RaceInSpaceGame raceinspaceGame) { 
         player = new Player(300,68);
@@ -15,6 +17,8 @@ public class World {
         carLeft = new Cars(300,290);
         carRight = new Cars(300,290);
         score = 0;
+        energy = 100;
+        gameOver = false;
 }
    
     Player getPlayer() {
@@ -36,6 +40,16 @@ public class World {
     }
     public void increaseScore() {
         score += 1;
+    }
+    public int getEnergy() {
+    	return energy;
+    }
+    public void decreaseEnergy() {
+    	energy -= 1;
+    }
+    
+    public boolean gameOver() {
+    	return gameOver;
     }
     
    
