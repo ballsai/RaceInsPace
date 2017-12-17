@@ -4,8 +4,8 @@ public class World {
 	private Player player;
 	private Cars car;
     World(RaceInSpaceGame raceinspaceGame) {
-        player = new Player(70,300);
-        car = new Cars(20,200);
+        player = new Player(300,68);
+        car = new Cars(300,200);
     }
  
     Player getPlayer() {
