@@ -9,7 +9,7 @@ public class Player {
 	    public static final int DIRECTION_DOWN = 3;
 	    public static final int DIRECTION_LEFT = 4;
 	    public static final int DIRECTION_STILL = 0;
-	    public static final int SPEED = 4;
+	    public static final int SPEED = 10;
 	    
 	    private static final int [][] DIR_OFFSETS = new int [][] {
 	        {0,0},
