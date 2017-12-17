@@ -7,8 +7,8 @@ import com.ballsai.mygdx.game.RaceInSpaceGame;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.width = 650;
-        config.height = 600;
+		config.width = RaceInSpaceGame.WIDTH;
+        config.height = RaceInSpaceGame.HEIGHT;
 		new LwjglApplication(new RaceInSpaceGame(), config);
 	}
 }
