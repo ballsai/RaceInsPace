@@ -81,16 +81,27 @@ public class GameScreen extends ScreenAdapter{
 	       world.Over();
 	    }
 	    
+	    /*if((world.getCarLeft().getPosition().y-world.getPlayer().getPosition().y)<30 &&
+	 	       (world.getCarLeft().getPosition().y-world.getPlayer().getPosition().y)>25 &&
+	 	    	Math.abs(0.8*world.getCarLeft().getPosition().y+60-world.getPlayer().getPosition().x )<50 &&
+	 	    	!Gdx.input.isKeyPressed(Keys.SPACE)) {
+	 	       world.getCarLeft().getPosition().y =300;
+	 	       world.Over();
+	 	    }*/
+	    
+	    
 	    
 	    
             
     }
+  }
     
+}
     
     	
        
-    }
     
-}
+    
+
     
     
