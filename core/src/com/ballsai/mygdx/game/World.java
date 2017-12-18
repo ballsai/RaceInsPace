@@ -1,16 +1,16 @@
 package com.ballsai.mygdx.game;
 
-import com.badlogic.gdx.math.MathUtils;
+
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
-
+import com.badlogic.gdx.math.MathUtils;
 public class World {
 	private Player player;
 	private Cars car,carLeft,carRight;
 	private int score;
 	private int energy;
 	private boolean gameOver;
-	
+	private int n;
     World(RaceInSpaceGame raceinspaceGame) { 
         player = new Player(300,68);
         car = new Cars(300,290);
@@ -19,6 +19,7 @@ public class World {
         score = 0;
         energy = 100;
         gameOver = false;
+        n = 0;
 }
    
     Player getPlayer() {
@@ -47,9 +48,17 @@ public class World {
     public void decreaseEnergy() {
     	energy -= 1;
     }
-    
+    public int getRandom() {
+    	return n;
+    }
+    public void Random() {
+    	n = MathUtils.random(1,7);
+    }
     public boolean gameOver() {
     	return gameOver;
+    }
+    public void Over() {
+    	gameOver = true;
     }
     
    
